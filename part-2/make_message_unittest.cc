@@ -1,3 +1,7 @@
+// Marcus McKinstry
+// marcmckinstry@csu.fullerton.edu
+// @heyyyitsmarcus
+// Partners: @pachmi
 
 /* Do not edit below this line. */
 /* Do not edit below this line. */

@@ -1,4 +1,7 @@
-// TODO: Add your header
+// Marcus McKinstry
+// marcmckinstry@csu.fullerton.edu
+// @heyyyitsmarcus
+// Partners: @pachmi
 
 #include "make_message_functions.h"
 
@@ -6,8 +9,20 @@
 
 bool HasMatchingFileExtension(const std::string& file_name,
                               const std::string& extension) {
-  // TODO: Copy and paste the body of this function from part-1.
-  return false;
+  int file_name_length = file_name.size();
+  int extension_length = extension.size();
+
+  bool is_long_enough = file_name_length > extension_length;
+
+  bool has_extension = false;
+
+  if (is_long_enough) {
+    int period_location = file_name_length - extension_length;
+    has_extension =
+        file_name.compare(period_location, extension_length, extension) == 0;
+  }
+
+  return has_extension;
 }
 
 // Secret global variable to make the randome number generator
@@ -25,20 +40,24 @@ RandomNumberGenerator rng_coin_flip{-1, 1, rng_seed};
 
 // Returns a random double between o and 1
 double RandomDouble01() {
-  // TODO: Using rng_01, call Next() and return the next random number.
-  return 0;
+  // X: Using rng_01, call Next() and return the next random number.
+  return rng_01.Next();
 }
 
 // Returns a random double between -1 and 1
 double RandomDouble11() {
-  // TODO: Using rng_11, call Next() and return the next random number.
-  return 0;
+  // X: Using rng_11, call Next() and return the next random number.
+  return rng_11.Next();
 }
 
 /// Return a True or False depending on a random value.
 /// Generates a random number and then decides to return True or False
 bool CoinFlip() {
-  // TODO: Using rng_coin_flip, call Next() and return true if the randome
+  // X: Using rng_coin_flip, call Next() and return true if the randome
   // number is greater than 0.0 and false otherwise.
+  if (rng_coin_flip.Next() > 0.0) {
+    return true;
+  }
+
   return false;
 }
